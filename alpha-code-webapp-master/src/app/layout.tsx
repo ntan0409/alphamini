@@ -6,6 +6,7 @@ import Provider from "./provider"
 import { PublicEnvScript } from "next-runtime-env"
 import { Toaster } from "sonner"
 import ChatbotWidget from "@/components/chatbot/chatbot-widget"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,14 +40,14 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <Provider>
-            {children}
-            <ChatbotWidget />
-            <Toaster
-              position="top-right" // top-left, top-center, bottom-left...
-              richColors
-              expand
-              closeButton
-            />
+          {children}
+          <ChatbotWidget />
+          <Toaster
+            position="top-right" // top-left, top-center, bottom-left...
+            richColors
+            expand
+            closeButton
+          />
         </Provider>
       </body>
     </html>
