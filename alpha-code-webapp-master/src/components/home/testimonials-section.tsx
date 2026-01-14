@@ -148,7 +148,7 @@ export const TestimonialsSection = forwardRef<HTMLElement, TestimonialsSectionPr
 
                       {/* Content */}
                       <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-6 flex-grow italic">
-                        "{testimonial.content}"
+                        &quot;{testimonial.content}&quot;
                       </p>
 
                       {/* Author */}
