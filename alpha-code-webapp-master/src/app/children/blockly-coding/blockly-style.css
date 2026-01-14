@@ -1,0 +1,110 @@
+/* Make Blockly blocks bigger for children */
+.blocklyBlockBackground {
+    stroke-width: 3px !important;
+}
+
+.blocklyPath {
+    stroke-width: 3px !important;
+}
+
+.blocklyText {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.blocklyEditableText .blocklyFieldText {
+    font-size: 14px !important;
+    height: 24px !important;
+    line-height: 24px !important;
+}
+
+.blocklyDropDownDiv .goog-menuitem {
+    font-size: 14px !important;
+    padding: 8px !important;
+}
+
+.blocklyNonEditableFieldText {
+    font-size: 14px !important;
+    height: 24px !important;
+    line-height: 24px !important;
+}
+
+.blocklyFlyoutButton {
+    height: 40px !important;
+    padding: 6px !important;
+}
+
+.blocklyFlyoutLabel {
+    font-size: 14px !important;
+    padding: 8px !important;
+}
+
+.customBlockCSS {
+    font-size: 140px !important;
+    padding: 100px !important;
+    color: red !important;
+    display: none !important;
+}
+
+/* Mobile overrides to keep Blockly usable on small screens */
+@media (max-width: 640px) {
+    .blocklyText {
+        font-size: 12px !important;
+    }
+    .blocklyEditableText .blocklyFieldText,
+    .blocklyNonEditableFieldText {
+        font-size: 12px !important;
+        height: 20px !important;
+        line-height: 20px !important;
+    }
+    .blocklyDropDownDiv .goog-menuitem {
+        font-size: 12px !important;
+        padding: 6px !important;
+    }
+    .blocklyFlyoutButton {
+        height: 32px !important;
+        padding: 4px !important;
+    }
+}
+
+/* Ensure Blockly dropdowns, flyouts and widget elements sit above app chrome */
+.blocklyDropDownDiv,
+.blocklyWidgetDiv,
+.blocklyFlyoutBackground,
+.goog-menu,
+.blocklyFlyoutButtons,
+.blocklyTooltipDiv {
+    z-index: 99999 !important;
+}
+
+/* Mobile toolbox adjustments: make the toolbox/flyout visible and usable on small screens */
+@media (max-width: 768px) {
+    /* Keep toolbox in-flow but ensure it's visible and interactable on small screens.
+       Avoid absolute positioning because Blockly wires events assuming toolbox is in the workspace DOM flow. */
+    .blocklyToolboxDiv {
+        z-index: 100020 !important;
+        /* keep natural positioning to preserve Blockly event wiring */
+        position: relative !important;
+        margin-left: 8px !important;
+        width: 220px !important;
+        max-width: 60% !important;
+        background: rgba(255,255,255,0.0) !important;
+        pointer-events: auto !important;
+    }
+    .blocklyFlyout {
+        z-index: 100021 !important;
+        /* let Blockly position the flyout; only constrain width so it fits */
+        width: 220px !important;
+        max-width: 60% !important;
+        pointer-events: auto !important;
+    }
+    .blocklyToolboxDiv .blocklyTreeRow {
+        white-space: normal !important; /* allow labels to wrap */
+        cursor: pointer !important;
+        display: block !important;
+        padding-left: 6px !important;
+    }
+    .blocklyToolboxDiv .blocklyTreeRow .blocklyTreeIcon {
+        margin-right: 6px !important;
+    }
+}
