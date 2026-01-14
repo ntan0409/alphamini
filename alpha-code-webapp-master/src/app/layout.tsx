@@ -48,6 +48,7 @@ export default function RootLayout({
             expand
             closeButton
           />
+          <SpeedInsights />
         </Provider>
       </body>
     </html>
